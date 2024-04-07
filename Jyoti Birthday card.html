@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D card Design</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background-color: #b1baa2;
+        }
+
+        .card {
+            width: 640px;
+            height: 400px;
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            -webkit-perspective: 1200px;
+            perspective: 1200px;
+            transition: 1s;
+        }
+
+        .card:hover {
+            transform: rotate(-5deg);
+        }
+
+        .card:hover .outside {
+            transform: rotateY(-130deg);
+        }
+
+        .outside,
+        .inside {
+            height: 100%;
+            width: 50%;
+            position: absolute;
+            left: 50.1%;
+        }
+
+        .inside {
+            border-radius: 2rem;
+            background: linear-gradient(to right, #e7e7e7, #ffffff 30%);
+            line-height: 3;
+            padding: 0 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            left: 50%;
+        }
+
+        .outside {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            z-index: 1;
+            transform-origin: left;
+            transition: 2s;
+            cursor: pointer;
+        }
+
+        .front,
+        .back {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            transform: rotateX(0deg);
+        }
+
+        .front {
+            border-radius: 2rem;
+            background-color: #ffffff;
+        }
+
+        .back {
+            border-radius: 2rem;
+            transform: rotateY(180deg);
+            background: linear-gradient(to left, #e7e7e7, #ffffff 30%);
+        }
+
+        img {
+            width: 20rem;
+            height: 25rem;
+            border-radius: 2rem;
+        }
+
+        .msg1 {
+            margin: 0px;
+            color: #5113e3;
+            font-size: 12px;
+            word-spacing: normal;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        span {
+            margin: 0px;
+            color: rgb(255, 3, 3);
+            padding: 1rem;
+        }
+        
+        .container3{
+            margin-left: 6rem;
+            margin-top: 4rem;
+            display: flex;
+        }
+        .container4{
+            margin-left: 6rem;
+            margin-top: 4rem;
+            display: flex;
+
+        }
+        .container5{
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+        }
+      
+        .box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 1s ease;
+         }
+        .jyotipic1{
+            width: 10rem;
+            height: 15rem;
+            border: 2px solid black;
+            box-shadow: 3px 5px 30px rgb(0, 51, 255); ;
+        }
+        .jyotipic2{
+            width: 10rem;
+            height: 15rem;
+            border: 2px solid black;
+            box-shadow: 3px 5px 30px rgb(0, 51, 255);
+        }
+        #box3:hover{
+            transform: scale(2);
+        }
+        #box4:hover{
+            transform: translateX(150px);
+        }
+        #box5{
+            width: 10rem;
+            height: 10rem;
+            border-radius: 10px;
+            text-transform: uppercase;
+            font-style: italic;
+            font-weight: bold;
+            letter-spacing: normal;
+            border: 2px solid black;
+            box-shadow: inset 3px 90px 100px lightsalmon; /*box-shadow: inset offset-x offset-y blur-radius spraed-radius color ("Inset" is compulsory for inbetween box others are as your requirement) -px values are also possible */
+        }
+        #box5:hover{
+            box-shadow: inset 3px 90px 100px rgb(255, 122, 182);
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item">
+            
+            <div class="container3">
+                <div class="box" id="box3">
+                    <img class="jyotipic1" src="jpic5.jpg" alt="jpic5">
+                </div>
+            </div>
+            <div class="container4">
+                <div class="box" id="box4">
+                    <img class="jyotipic2" src="jpic2.jpg" alt="jpic2">
+                </div>
+            </div>
+            <div class="container5">
+                <div class="box" id="box5">
+                    <p>“Every day, I ask myself how I got lucky enough to have you in my life. Happy birthday, my love!”</p>
+                </div>
+            </div>
+            
+             <div class="card">
+                <div class="outside">
+                    <div class="front">
+                        <img src="cake.jpeg" alt="jyoti photo">
+                    </div>
+                    <div class="back">
+                        <img class="jclass1" src="jpic4.jpg" alt="pic4">
+                    </div>
+                </div>
+                <div class="inside">
+                    <p class="msg1">
+                        You bring so much happiness and joy to my heart. Every moment I spend with you is special for
+                        me. I want
+                        this
+                        day to become so memorable and beautiful for you. Enjoy your best day full of love and
+                        happiness.
+                        Happy Birthday to my heart beat who is bringing so much joy to my heart.
+                        I am thankful for every moment we spend together,and I wish your happiness never ends.
+                    </p>
+                    <span>Happy Birthday my life.............</span>.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
